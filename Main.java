@@ -1,13 +1,14 @@
+import java.util.*;
+
 public class Main {
+    public static Iterator reverse(List list) {
+        Collections.reverse(list);
+        return list.iterator();
+    }
     public static void main(String[] args) {
-        try {
-            args = null;
-            args[0] = "test";
-            System.out.println(args[0]);
-        } catch (Exception ex) {
-            System.out.println("Exception");
-        } catch (NullPointerException npe) {
-            System.out.println("NullPointerException");
-        }
+        List list = new ArrayList();
+        list.add("1"); list.add("2"); list.add("3");
+        for (Object obj: reverse(list))
+            System.out.print(obj + ", ");
     }
 }
